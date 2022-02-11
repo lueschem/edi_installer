@@ -1,11 +1,11 @@
 ---
 - name: Update the apt cache.
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
   changed_when: false
 
 - name: Make sure that snapd is installed.
-  apt:
+  ansible.builtin.apt:
     name:
       - snapd
     install_recommends: false
@@ -36,24 +36,24 @@
     ssh_key_file: .ssh/id_rsa
 
 - name: Add edi repository key for {{ ansible_distribution }}.
-  copy:
+  ansible.builtin.copy:
     src: get-edi-io-archive-keyring.gpg.{{ ansible_distribution }}
     dest: /usr/share/keyrings/get-edi-io-archive-keyring.gpg
     mode: 0644
 
 - name: Add edi repository for {{ ansible_distribution }}.
-  template:
+  ansible.builtin.template:
     src: get-edi-io.list.{{ ansible_distribution }}
     dest: /etc/apt/sources.list.d/get-edi-io.list
     mode: 0644
 
 - name: Update the apt cache.
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
   changed_when: false
 
 - name: Install edi.
-  apt:
+  ansible.builtin.apt:
     name:
       - edi
-    state: present
+    state: latest
