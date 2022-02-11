@@ -1,7 +1,6 @@
 ---
 - hosts: all
-  remote_user: root
   roles:
-    - role: edi-installer
+    - role: edi_installer
       become: true
       become_user: root

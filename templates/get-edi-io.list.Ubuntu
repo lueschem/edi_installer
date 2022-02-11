@@ -1,0 +1,2 @@
+deb [signed-by=/usr/share/keyrings/get-edi-io-archive-keyring.gpg] http://ppa.launchpad.net/m-luescher/edi-snapshots/ubuntu/ {{ ansible_distribution_release }} main
+# deb-src [signed-by=/usr/share/keyrings/get-edi-io-archive-keyring.gpg] http://ppa.launchpad.net/m-luescher/edi-snapshots/ubuntu/ {{ ansible_distribution_release }} main

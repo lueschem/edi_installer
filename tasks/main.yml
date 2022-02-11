@@ -2,6 +2,7 @@
 - name: Update the apt cache.
   apt:
     update_cache: yes
+  changed_when: false
 
 - name: Make sure that snapd is installed.
   apt:
@@ -17,7 +18,9 @@
       - lxd
 
 - name: Initialize lxd with default values.
-  command: /snap/bin/lxd init --auto
+  ansible.builtin.command: bash -c "/snap/bin/lxd init --auto && touch /etc/edi_installer_lxd_init.done"
+  args:
+    creates: /etc/edi_installer_lxd_init.done
 
 - name: Add the user {{ edi_user }} to the group lxd.
   ansible.builtin.user:
@@ -32,3 +35,25 @@
     ssh_key_bits: 2048
     ssh_key_file: .ssh/id_rsa
 
+- name: Add edi repository key for {{ ansible_distribution }}.
+  copy:
+    src: get-edi-io-archive-keyring.gpg.{{ ansible_distribution }}
+    dest: /usr/share/keyrings/get-edi-io-archive-keyring.gpg
+    mode: 0644
+
+- name: Add edi repository for {{ ansible_distribution }}.
+  template:
+    src: get-edi-io.list.{{ ansible_distribution }}
+    dest: /etc/apt/sources.list.d/get-edi-io.list
+    mode: 0644
+
+- name: Update the apt cache.
+  apt:
+    update_cache: yes
+  changed_when: false
+
+- name: Install edi.
+  apt:
+    name:
+      - edi
+    state: present

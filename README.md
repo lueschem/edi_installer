@@ -31,15 +31,15 @@ Testing
 -------
 
 ```
-sudo ansible-playbook --connection=local -i edi-installer/tests/inventory edi-installer/tests/test.yml --extra-vars "edi_user=${USER}"
+sudo ansible-playbook --connection=local -i edi_installer/tests/inventory edi_installer/tests/test.yml --extra-vars "edi_user=${USER}"
 ```
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+https://www.get-edi.io
