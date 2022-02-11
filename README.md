@@ -27,6 +27,13 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - { role: username.rolename, x: 42 }
 
+Testing
+-------
+
+```
+sudo ansible-playbook --connection=local -i edi-installer/tests/inventory edi-installer/tests/test.yml --extra-vars "edi_user=${USER}"
+```
+
 License
 -------
 
