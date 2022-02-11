@@ -3,4 +3,3 @@
   roles:
     - role: edi_installer
       become: true
-      become_user: root
