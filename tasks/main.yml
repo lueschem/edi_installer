@@ -52,8 +52,17 @@
     update_cache: yes
   changed_when: false
 
-- name: Install edi.
+- name: Install edi and a bunch of commonly required packages.
   ansible.builtin.apt:
     name:
+      - bmap-tools
+      - dosfstools
+      - e2fsprogs
       - edi
+      - mender-artifact
+      - mtools
+      - parted
+      - python3-sphinx
+      - rsync
+      - zerofree
     state: latest
