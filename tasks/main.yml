@@ -63,6 +63,7 @@
       - mtools
       - parted
       - python3-sphinx
+      - python3-testinfra
       - rsync
       - zerofree
     state: latest
