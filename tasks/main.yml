@@ -12,10 +12,9 @@
     state: present
 
 - name: Install the core and the lxd snap.
-  community.general.snap:
-    name:
-      - core
-      - lxd
+  ansible.builtin.command: bash -c "snap install core && snap install lxd && touch /etc/edi_installer_snap_installation.done"
+  args:
+    creates: /etc/edi_installer_snap_installation.done
 
 - name: Initialize lxd with default values.
   ansible.builtin.command: bash -c "/snap/bin/lxd init --auto && touch /etc/edi_installer_lxd_init.done"
