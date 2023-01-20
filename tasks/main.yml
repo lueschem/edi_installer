@@ -4,9 +4,10 @@
     update_cache: yes
   changed_when: false
 
-- name: Make sure that snapd is installed.
+- name: Make sure that snapd and iptables is installed.
   ansible.builtin.apt:
     name:
+      - iptables
       - snapd
     install_recommends: false
     state: present
@@ -58,7 +59,6 @@
       - dosfstools
       - e2fsprogs
       - edi
-      - iptables
       - mender-artifact
       - mtools
       - parted
