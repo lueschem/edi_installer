@@ -67,3 +67,4 @@
       - rsync
       - zerofree
     state: latest
+    install_recommends: no
