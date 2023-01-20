@@ -58,6 +58,7 @@
       - dosfstools
       - e2fsprogs
       - edi
+      - iptables
       - mender-artifact
       - mtools
       - parted
