@@ -62,7 +62,6 @@
       - edi
       - genimage
       - mender-artifact
-      - mkdosfs
       - mtools
       - parted
       - python3-sphinx
