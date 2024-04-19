@@ -57,6 +57,7 @@
     name:
       - bmap-tools
       - buildah
+      - containers-storage
       - dosfstools
       - e2fsprogs
       - edi
