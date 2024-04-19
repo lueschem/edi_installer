@@ -64,6 +64,7 @@
       - genimage
       - git
       - mender-artifact
+      - mmdebstrap
       - mtools
       - parted
       - python3-sphinx
