@@ -58,9 +58,11 @@
       - bmap-tools
       - buildah
       - containers-storage
+      - crun
       - dosfstools
       - e2fsprogs
       - edi
+      - fakeroot
       - genimage
       - git
       - mender-artifact
