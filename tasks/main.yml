@@ -69,9 +69,11 @@
       - mmdebstrap
       - mtools
       - parted
+      - podman
       - python3-sphinx
       - python3-testinfra
       - rsync
+      - ruby-rubygems
       - zerofree
     state: latest
     install_recommends: no
