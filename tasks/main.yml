@@ -55,6 +55,7 @@
 - name: Install edi and a bunch of commonly required packages.
   ansible.builtin.apt:
     name:
+      - arch-test
       - bmap-tools
       - buildah
       - containers-storage
