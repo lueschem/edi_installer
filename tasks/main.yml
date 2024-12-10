@@ -75,6 +75,7 @@
       - python3-testinfra
       - rsync
       - ruby-rubygems
+      - slirp4netns
       - zerofree
     state: latest
     install_recommends: no
