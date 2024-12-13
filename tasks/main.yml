@@ -70,6 +70,7 @@
       - mmdebstrap
       - mtools
       - parted
+      - passt
       - podman
       - python3-sphinx
       - python3-testinfra
